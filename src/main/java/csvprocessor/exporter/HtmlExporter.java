@@ -62,13 +62,13 @@ public class HtmlExporter implements FileExporter<SalesData>
                     .append("</td><td>")
                     .append(record.getUnits())
                     .append("</td><td>")
-                    .append((record.getUnits() / data.getTotalUnits()) * 100)
+                    .append(String.format("%.3f",(record.getUnits() / data.getTotalUnits()) * 100))
                     .append("</td></tr>");
         }
 
         tableString
                 .append("<tr><td>Total</td><td>")
-                .append(data.getTotalUnits())
+                .append(String.format("%.6f", data.getTotalUnits()))
                 .append("</td><td>100%<t/d></tr>");
 
         String htmlResult = htmlTemplateString;
