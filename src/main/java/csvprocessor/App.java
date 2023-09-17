@@ -9,12 +9,11 @@ import java.util.Scanner;
 
 public class App
 {
-    private static boolean dataLoaded = false;
-
     public static void main(String[] args)
     {
-        Scanner scanner = new Scanner(System.in);
+        boolean dataLoaded = false;
 
+        Scanner scanner = new Scanner(System.in);
         DataProvider dataProvider = new DataProvider();
         DataProcessor dataProcessor;
         List<SalesRecord> tableData;
@@ -108,7 +107,7 @@ public class App
                                 case 6 -> {
                                     System.out.println("Enter the vendor name: ");
                                     String vendorName2 = scanner.nextLine();
-                                    dataProcessor.getVendorRowNumber(vendorName2);
+                                    System.out.println("Vendor row number: " + dataProcessor.getVendorRowNumber(vendorName2));
                                 }
 
                             }

@@ -44,18 +44,17 @@ public class DataProcessor
         }
     }
 
-    public void getVendorRowNumber(String vendor)
+    public int getVendorRowNumber(String vendor)
     {
        for(int i = 0; i < records.size(); i++)
        {
            SalesRecord record = records.get(i);
            if(record.getVendor().equals(vendor))
            {
-               System.out.println("Row number: " + i);
-               return;
+               return i;
            }
        }
-        System.out.println("Vendor not found");
+        return -1;
     }
 
     public void sortByName(boolean asc)
