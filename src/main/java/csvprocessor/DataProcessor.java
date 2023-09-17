@@ -40,7 +40,9 @@ public class DataProcessor
         if(first.isPresent())
         {
             SalesRecord sale = first.get();
-            System.out.println("Vendor: "+  sale.getVendor() +"  Units: " + sale.getUnits() + "  Share: " + (sale.getUnits() / totalUnits) * 100);
+
+            System.out.println("Vendor: "+  sale.getVendor() +"  Units: " + String.format("%.6f",sale.getUnits()) +
+                    "  Share: " + String.format("%.3f",(sale.getUnits() / totalUnits) * 100) + "%");
         }
     }
 
