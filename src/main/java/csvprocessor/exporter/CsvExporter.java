@@ -1,26 +1,19 @@
-package csvprocessor;
+package csvprocessor.exporter;
 
 import com.opencsv.CSVWriter;
+import csvprocessor.SalesData;
+import csvprocessor.SalesRecord;
+import csvprocessor.exporter.FileExporter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-/**
- * The 'CsvExporter' class is responsible for exporting sales data to CSV file.
- * It implements the FileExporter interface with focus on CSV format.
- * @see FileExporter
- */
 public class CsvExporter implements FileExporter<SalesData>
 {
     private final String extension = ".csv";
 
-    /**
-     * Exports sales data to an CSV file.
-     * @param path The path to save the file to disk.
-     * @param data The 'SalesData' object containing sales records to be exported to the CSV file.
-     * @see SalesData
-     */
     @Override
     public void export(String path, SalesData data)
     {

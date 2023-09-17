@@ -1,10 +1,7 @@
-package csvprocessor;
+package csvprocessor.exporter;
 
-/**
- * The 'ExcelExporter' class is responsible for exporting sales data to Excel file.
- * It implements the FileExporter interface with focus on Excel format.
- * @see FileExporter
- */
+import csvprocessor.SalesData;
+
 public class ExcelExporter implements FileExporter<SalesData>
 {
     /**

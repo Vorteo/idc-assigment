@@ -1,5 +1,9 @@
 package csvprocessor;
 
+import csvprocessor.exporter.CsvExporter;
+import csvprocessor.exporter.ExcelExporter;
+import csvprocessor.exporter.HtmlExporter;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -53,7 +57,7 @@ public class App
                         String quarter = scanner.nextLine();
 
                         tableData = dataProvider.getRecordsByCountryQuarter(country, quarter);
-                        dataProcessor = new DataProcessor(tableData, new HtmlExporter());
+                        dataProcessor = new DataProcessor(tableData);
 
                         while(true)
                         {

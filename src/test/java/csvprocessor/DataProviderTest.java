@@ -3,7 +3,8 @@ package csvprocessor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.nio.file.Paths;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class DataProviderTest
 {
@@ -18,12 +19,12 @@ class DataProviderTest
     @Test
     void loadDataFromCSVInvalidPath()
     {
-        assertEquals( dataProvider.loadDataFromCSV("D:/path/not/exists/tada"), false);
+        assertFalse(dataProvider.loadDataFromCSV("D:/path/not/exists/tada"));
     }
     @Test
     void loadDataFromCSVIsValidPath()
     {
-        assertEquals( dataProvider.loadDataFromCSV(Paths.get("src","test","java","resources","data.csv").toString()),true);
+        assertTrue(dataProvider.loadDataFromCSV(Paths.get("src", "test", "java", "resources", "data.csv").toString()));
     }
 
     @Test
@@ -40,7 +41,7 @@ class DataProviderTest
     @Test
     void getRecordsByCountryQuarterEmpty()
     {
-        assertEquals(dataProvider.getRecordsByCountryQuarter("Aaaaaaaaadada", "Q5").isEmpty(), true);
+        assertTrue(dataProvider.getRecordsByCountryQuarter("Aaaaaaaaadada", "Q5").isEmpty());
     }
 
     @Test
