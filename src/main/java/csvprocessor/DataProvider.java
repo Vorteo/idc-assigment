@@ -6,9 +6,6 @@ import java.io.FileReader;
 import java.util.List;
 
 
-/**
- * The 'Loader' class represents a simple database into which data is loaded.
- */
 public class DataProvider
 {
     private List<SalesRecord> salesRecords;
