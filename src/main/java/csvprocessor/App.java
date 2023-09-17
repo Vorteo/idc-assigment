@@ -11,7 +11,7 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        Loader loader = new Loader();
+        DataProvider dataProvider = new DataProvider();
         DataProcessor dataProcessor;
         List<SalesRecord> tableData;
 
@@ -40,7 +40,7 @@ public class App
                 case 1 -> {
                     System.out.println("Enter the path to the file you want to read: ");
                     String filepath = scanner.nextLine();
-                    dataLoaded = loader.loadDataFromCSV(filepath);
+                    dataLoaded = dataProvider.loadDataFromCSV(filepath);
                 }
                 case 2 -> {
                     if (dataLoaded)
@@ -52,7 +52,7 @@ public class App
                         System.out.println("Enter the time period Q1-Q4: ");
                         String quarter = scanner.nextLine();
 
-                        tableData = loader.getRecordsByCountryQuarter(country, quarter);
+                        tableData = dataProvider.getRecordsByCountryQuarter(country, quarter);
                         dataProcessor = new DataProcessor(tableData, new HtmlExporter());
 
                         while(true)

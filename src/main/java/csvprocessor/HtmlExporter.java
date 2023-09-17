@@ -5,8 +5,17 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * The 'HtmlExporter' class is responsible for exporting sales data to Excel file.
+ * It implements the FileExporter interface with focus on HTML format.
+ * @see FileExporter
+ */
 public class HtmlExporter implements FileExporter<SalesData>
 {
+    /**
+     * HTML template string for generating tabular reports.
+     * String includes HTML and CSS for creating table with headers and tag for dynamically insert the reports' data.
+     */
     private final String htmlTemplateString =
             "<html>" +
                 "<head>" +
@@ -27,6 +36,12 @@ public class HtmlExporter implements FileExporter<SalesData>
             "</html>";
     private final String extension = ".html";
 
+    /**
+     * Exports sales data to an HTML file with table format.
+     * @param path The path to save the file to disk.
+     * @param data The 'SalesData' object containing sales records to be exported to the HTML file.
+     * @see SalesData
+     */
     @Override
     public void export(String path, SalesData data)
     {
@@ -79,7 +94,7 @@ public class HtmlExporter implements FileExporter<SalesData>
         }
         catch (IOException e)
         {
-            e.printStackTrace();
+            System.err.println("Error exporting data to HTML file.");
         }
     }
 }
